@@ -10,8 +10,8 @@ fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
 X = np.arange(-5, 5, 0.25)
 Y = np.arange(-5, 5, 0.25)
 X, Y = np.meshgrid(X, Y)
-R = np.sqrt(X**2 + Y**2) + [np.random.normal(0,1,40)/5 for x in range(40)]
-Z = R
+R = np.sqrt(X**2 + Y**2)
+Z = R + [np.random.normal(0,1,40)/5 for x in range(40)]
 
 # [np.random.normal(0,1,n)/5 for x in range(m)] adds noise to a m by n matrix
 # Plot the surface.
@@ -27,7 +27,7 @@ ax.zaxis.set_major_formatter('{x:.02f}')
 # Add a color bar which maps values to colors.
 fig.colorbar(surf, shrink=0.5, aspect=5)
 
-plt.show()
+# plt.show()
 
 
 
@@ -39,25 +39,29 @@ import random
 
 T = 10000
 n = 100
-x = 0
+j = random.randint(0, len(R))
 e = 0
 
-while T:
-    for i in range(n):
-        delx = random.uniform(-10, 10)
-        e2 = np.sin(x+delx)
+print(X)
+print(Y)
+print(Z)
 
-        de = e2 - e
+# while T:
+#     for i in range(n):
+#         delx = random.uniform(-10, 10)
+#         e2 = np.sin(x+delx)
 
-        if de > 0:
-            x = x + delx
-            e = e2
-        elif np.exp(-de/T) <= 1:
-            x = x + delx
-            e = e2
-    T -= 1
+#         de = e2 - e
 
-print(np.sin(x))
+#         if de > 0:
+#             x = x + delx
+#             e = e2
+#         elif np.exp(-de/T) <= 1:
+#             x = x + delx
+#             e = e2
+#     T -= 1
+
+# print(np.sin(x))
 
 
 
