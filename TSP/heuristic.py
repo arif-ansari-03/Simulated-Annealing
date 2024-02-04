@@ -17,6 +17,7 @@ def completegraph(num_nodes, weight_range=(1, 100)):
 
 
 def plot_graph_step(G, tour, current_node, pos):
+    print(tour)
     plt.clf()
     # remove edgelist paramter to show all edges
     nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=500, edgelist=[])
@@ -27,11 +28,11 @@ def plot_graph_step(G, tour, current_node, pos):
     # labels on edges
 
     # only labels on tour
-    edge_labels = dict(zip(path_edges, [G[u][v]['weight'] for u, v in path_edges]))
+    # edge_labels = dict(zip(path_edges, [G[u][v]['weight'] for u, v in path_edges]))
     # all labels
     # edge_labels = nx.get_edge_attributes(G, 'weight')  
 
-    nx.draw_networkx_edge_labels(0, pos, edge_labels=edge_labels)
+    # nx.draw_networkx_edge_labels(0, pos, edge_labels=edge_labels)
 
     plt.pause(0.5)
 

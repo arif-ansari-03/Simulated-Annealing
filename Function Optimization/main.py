@@ -46,6 +46,9 @@ print(X)
 print(Y)
 print(Z)
 
+# if de > 0 : accept
+# if de < 0 : P(accept) = exp(de/T) 
+
 # while T:
 #     for i in range(n):
 #         delx = random.uniform(-10, 10)
